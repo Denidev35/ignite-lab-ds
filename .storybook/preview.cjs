@@ -7,7 +7,7 @@ import '../src/styles/global.css'
 initialize({
   onUnhandledRequest: 'bypass',
   serviceWorker: {
-    url: isDevelopment ? 'mockServiceWorker.js' : '/ignite-lab-design-system/mockServiceWorker.js'
+    url: isDevelopment ? 'mockServiceWorker.js' : '/ignite-lab-ds/mockServiceWorker.js'
   }
 });
 
