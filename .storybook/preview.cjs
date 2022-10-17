@@ -1,9 +1,14 @@
 import { themes } from '@storybook/theming';
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 
+const isDevelopment = window.CONFIG_TYPE === 'DEVELOPMENT';
+
 import '../src/styles/global.css'
 initialize({
-  onUnhandledRequest: 'bypass'
+  onUnhandledRequest: 'bypass',
+  serviceWorker: {
+    url: isDevelopment ? 'mockServiceWorker.js' : '/ignite-lab-design-system/mockServiceWorker.js'
+  }
 });
 
 export const decorators = [mswDecorator];
